@@ -4,7 +4,7 @@ import Amount from "./Amount";
 const Transaction = ({ description, amount, currency, direction }) => {
   return (
     <p>
-      {description} <Amount amount={amount} currency={currency} />
+      <b>{description}</b> <Amount amount={amount} currency={currency} />
     </p>
   );
 };

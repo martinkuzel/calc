@@ -1,0 +1,3 @@
+class Store {
+  filter = "ALL";
+}
