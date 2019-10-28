@@ -1,38 +1,21 @@
 import React from "react";
 import "./App.css";
-import Pagination from "./Components/Pagination";
-import Navigation from "./Components/Navigation";
-import TransactionList from "./Components/TransactionList";
-import NewTransactionButton from "./Components/NewTransactionButton";
-import Store from "./Store";
+import MyApp from "./Components/MyApp";
 
 function App() {
-  const transactionData = [
-    { description: "Vyplany", amount: 5000, currency: "CZK", direction: "OUT" },
-    { description: "Vyplata", amount: 1000, currency: "EUR", direction: "IN" },
-    {
-      description: "Kniha javascript v praxi",
-      amount: 256,
-      currency: "CZK",
-      direction: "OUT"
-    }
-  ];
+  //   const Button = styled.div`
+  //     width: 5rem;
+  //     height: 3rem;
+  //     background-color: gold;
+  //     border: 2px solid black;
+  //     border-radius: 5px;
+  //   `;
 
-  this.setState = {
-    filter: "ALL"
-  };
-
-  let filter = "ALL";
-
-  const store = new Store();
+  //   const handleAdd = () => {};
 
   return (
     <div className="App">
-      <Navigation filter={store} />
-      <TransactionList transactionData={transactionData} filter={store} />
-      <Pagination />
-      <NewTransactionButton />
-      {filter}
+      <MyApp />
     </div>
   );
 }
