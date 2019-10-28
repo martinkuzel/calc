@@ -38,24 +38,32 @@ const MyApp = () => {
     );
   }
 
-  // const applyFilter = () => {
-  //   const actTransactions = transactionData.filter(
-  //     transaction => transaction.direction === filter || "ALL" === filter
-  //   );
-  
-  //   setTransactionDataView(actTransactions);
-  // }
-
-  useEffect(() => {
+  const applyFilter = () => {
     const actTransactions = transactionData.filter(
       transaction => transaction.direction === filter || "ALL" === filter
     );
   
     setTransactionDataView(actTransactions);
+  }
+
+  useEffect(() => {
+    applyFilter();
+  }, [transactionData, filter]) // Q: checkstyle ?
+
+  // useEffect(applyFilter(), [transactionData, filter]);
+
+  // useEffect(() => {
+  //   // proc nemuzu volat metodu (applyfilter) v efektu ?
+  //   const actTransactions = transactionData.filter(
+  //     transaction => transaction.direction === filter || "ALL" === filter
+  //   );
+  
+    // setTransactionDataView(actTransactions);
+
     // return () => {
     //   this.applyFilter();
     // };
-  }, [transactionData, filter])
+  // }, [transactionData, filter])
 
 
   return (
