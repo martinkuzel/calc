@@ -1,28 +1,13 @@
 import React from "react";
 
-const ButtonGroup = () => {
+const ButtonGroup = ({applyFilter}) => {
   return (
     <div>
-      <div
-        onClick={() => {
-          this.props.filter = "IN";
-        }}
-      >
-        In
-      </div>
-      <div
-        onClick={() => {
-          this.props.filter = "OUT";
-        }}
-      >
-        Out
-      </div>
+      <div onClick={() => { applyFilter('IN') }}>In</div>
+      <div onClick={() => { applyFilter('OUT') }}>Out</div>
+      <div onClick={() => { applyFilter('ALL') }}>All</div>
     </div>
   );
 };
-
-// const setFilter = (newFilter) => {
-//   store.filter = newFilter;
-// };
 
 export default ButtonGroup;

@@ -1,10 +1,10 @@
 import React from "react";
 import ButtonGroup from "./ButtonGroup";
 
-const Navigation = (state) => {
+const Navigation = ({applyFilter}) => {
   return (
     <div>
-      <ButtonGroup state={state}></ButtonGroup>
+      <ButtonGroup applyFilter={applyFilter}></ButtonGroup>
       <button>graph</button>
     </div>
   );

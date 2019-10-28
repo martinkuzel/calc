@@ -1,14 +1,11 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionList = ({ transactionData, filter }) => {
-  const actTransactions = transactionData.filter(
-    transaction => transaction.direction === filter || "ALL" === filter
-  );
+const TransactionList = ({ transactionData }) => {
 
   return (
     <div>
-      {actTransactions.map(transaction => (
+      {transactionData.map(transaction => (
         <Transaction
           description={transaction.description}
           amount={transaction.amount}
