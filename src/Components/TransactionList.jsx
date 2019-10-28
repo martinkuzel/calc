@@ -1,16 +1,14 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionList = ({ transactionData }) => {
+const TransactionList = ({ transactionData, removeTransaction }) => {
 
   return (
     <div>
       {transactionData.map(transaction => (
         <Transaction
-          description={transaction.description}
-          amount={transaction.amount}
-          currency={transaction.currency}
-          direction={transaction.direction}
+          transaction={transaction}
+          removeTransaction={removeTransaction}
         />
       ))}
     </div>

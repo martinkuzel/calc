@@ -19,10 +19,11 @@ import Amount from "./Amount";
 
 // as="h1"
 
-const Transaction = ({ description, amount, currency, direction }) => {
+const Transaction = ({ transaction, removeTransaction }) => {
   return (
     <div>
-      <b>{description}</b> <Amount amount={amount} currency={currency} />
+      <b>{transaction.description}</b> <Amount amount={transaction.amount} currency={transaction.currency} /> 
+        <span onClick={() => removeTransaction(transaction)}> --</span>
     </div>
   );
 };

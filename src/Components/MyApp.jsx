@@ -38,6 +38,11 @@ const MyApp = () => {
     );
   }
 
+  // Q: quals, hashcode
+  const removeTransaction = (transaction) => {
+    setTransactionData(transactionData.filter(tr => tr !== transaction));
+  } 
+
   const applyFilter = () => {
     const actTransactions = transactionData.filter(
       transaction => transaction.direction === filter || "ALL" === filter
@@ -69,7 +74,7 @@ const MyApp = () => {
   return (
     <div>
       <Navigation setNewFilter={setFilter} />
-      <TransactionList transactionData={transactionDataView} />
+      <TransactionList transactionData={transactionDataView} removeTransaction={removeTransaction} />
 
       <Pagination />
       <NewTransactionButton addTransaction={addTransaction} />
