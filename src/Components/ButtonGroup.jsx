@@ -1,11 +1,11 @@
 import React from "react";
 
-const ButtonGroup = ({applyFilter}) => {
+const ButtonGroup = ({setNewFilter}) => {
   return (
     <div>
-      <div onClick={() => { applyFilter('IN') }}>In</div>
-      <div onClick={() => { applyFilter('OUT') }}>Out</div>
-      <div onClick={() => { applyFilter('ALL') }}>All</div>
+      <div onClick={() => { setNewFilter('IN') }}>In</div>
+      <div onClick={() => { setNewFilter('OUT') }}>Out</div>
+      <div onClick={() => { setNewFilter('ALL') }}>All</div>
     </div>
   );
 };
