@@ -5,11 +5,11 @@ import styled from "styled-components";
 const TransactionContainer = styled.div`
   border: 4px solid black;
   background: silver;
-  margin: 0.5rem;
+  margin: 0.5rem auto;
   width: 50rem;
 `;
 
-//Q: styled - Co kdyz chci bezne classou ?
+// Q: styled - Co kdyz chci bezne classou ?
 
 // const StyledContainer = styled(Container)`
 //   margin-left: 1.5rem;
