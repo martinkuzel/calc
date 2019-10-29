@@ -38,7 +38,7 @@ const MyApp = () => {
     );
   }
 
-  // Q: quals, hashcode
+  // Q: quals, hashcode, deep compare, json strigify
   const removeTransaction = (transaction) => {
     setTransactionData(transactionData.filter(tr => tr !== transaction));
   } 
@@ -53,7 +53,7 @@ const MyApp = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [transactionData, filter]) // Q: checkstyle ?
+  }, [transactionData, filter]) // Q: checkstyle ? useCallBack
 
   // useEffect(applyFilter(), [transactionData, filter]);
 

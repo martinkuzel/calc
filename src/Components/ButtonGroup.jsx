@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const DirButton = styled.div`
+export const DirButton = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 5rem;
   height: 3rem;
-  background-color: silver;
+  /* background-color: silver; */
+  background: linear-gradient(to top, silver, lightblue);
   border: 5px solid black;
   margin: 0.2rem;
   font-variant-caps: all-petite-caps; 
