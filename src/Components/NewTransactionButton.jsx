@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { DirButton } from "./ButtonGroup";
 
-// Q: jak podedim z jine class ?
+// QA: jak podedim z jine class ?
 // as="span" pri pouziti
 
 // const AddButtonx = styled.div`

@@ -2,10 +2,14 @@ import React from "react";
 import Amount from "./Amount";
 import styled from "styled-components";
 
-// const Container = styled.div`
-//   display: flex;
-//   justify-content: center;
-// `;
+const TransactionContainer = styled.div`
+  border: 4px solid black;
+  background: silver;
+  margin: 0.5rem;
+  width: 50rem;
+`;
+
+//Q: styled - Co kdyz chci bezne classou ?
 
 // const StyledContainer = styled(Container)`
 //   margin-left: 1.5rem;
@@ -30,15 +34,14 @@ const RemoveButton = styled.div`
 `;
 
 // CssToShare
-
 // as="h1"
 
 const Transaction = ({ transaction, removeTransaction }) => {
   return (
-    <div>
+    <TransactionContainer>
       <b>{transaction.description}</b> <Amount amount={transaction.amount} currency={transaction.currency} /> 
         <RemoveButton onClick={() => removeTransaction(transaction)}></RemoveButton>
-    </div>
+    </TransactionContainer>
   );
 };
 

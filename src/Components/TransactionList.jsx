@@ -5,10 +5,11 @@ const TransactionList = ({ transactionData, removeTransaction }) => {
 
   return (
     <div>
-      {transactionData.map(transaction => (
+      {transactionData.map((transaction, index) => (
         <Transaction
           transaction={transaction}
           removeTransaction={removeTransaction}
+          key={index}
         />
       ))}
     </div>
