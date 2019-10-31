@@ -9,7 +9,7 @@ const TransactionContainer = styled.div`
   width: 50rem;
 `;
 
-// Q: styled - Co kdyz chci bezne classou ?
+// QA: styled - Co kdyz chci bezne classou ? - Container per component, nebo i cela App a pak odteckovavat uvnitr jeho styled definice.
 
 // const StyledContainer = styled(Container)`
 //   margin-left: 1.5rem;
