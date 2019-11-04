@@ -3,6 +3,8 @@ import Navigation from "./Navigation";
 import TransactionList from "./TransactionList";
 import Pagination from "./Pagination";
 import NewTransactionButton from "./NewTransactionButton";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Graph from "./Graph";
 
 const data = [
   { description: "Vypalny", amount: 5000, currency: "CZK", direction: "OUT" },
@@ -15,6 +17,7 @@ const MyApp = () => {
   const [filter, setFilter] = useState('ALL');
   const [transactionData, setTransactionData] = useState(data);
   const [transactionDataView, setTransactionDataView] = useState(data);
+  const [graph, setGraph] = useState(false);
 
   // po add styled mam problem
 
@@ -51,9 +54,14 @@ const MyApp = () => {
     setTransactionDataView(actTransactions);
   }
 
+  const toggleGraph = (value) => {
+    setGraph(value);
+  }
+
   useEffect(() => {
     applyFilter();
   }, [transactionData, filter]) // QA: checkstyle ? useCallBack
+
 
   // useEffect(applyFilter(), [transactionData, filter]);
 
@@ -73,8 +81,21 @@ const MyApp = () => {
 
   return (
     <div>
-      <Navigation setNewFilter={setFilter} />
-      <TransactionList transactionData={transactionDataView} removeTransaction={removeTransaction} />
+
+      <BrowserRouter>
+        <Navigation setNewFilter={setFilter} graph={graph}/>
+
+        <Switch>
+          <Route path='/graph'
+            render={() => <Graph toggleGraph={toggleGraph}></Graph> }
+          ></Route>
+          
+          <Route path='/' render={ () => 
+              <TransactionList transactionData={transactionDataView} removeTransaction={removeTransaction} toggleGraph={toggleGraph} />}
+          >
+          </Route>
+        </Switch>
+      </BrowserRouter>
 
       <Pagination />
       <NewTransactionButton addTransaction={addTransaction} />

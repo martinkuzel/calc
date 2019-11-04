@@ -1,7 +1,9 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionList = ({ transactionData, removeTransaction }) => {
+const TransactionList = ({ transactionData, removeTransaction, toggleGraph }) => {
+
+  toggleGraph(false);
 
   return (
     <div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pagination = () => {
+const Pagination = ({pageLength}) => {
   return <p>Pagination</p>;
 };
 
