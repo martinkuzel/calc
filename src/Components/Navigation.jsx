@@ -1,6 +1,14 @@
 import React from "react";
 import ButtonGroup from "./ButtonGroup";
-import {useHistory,useParams} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import styled from "styled-components";
+
+const GraphButton = styled.button`
+  background: url('line-chart.svg') no-repeat;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+`;
 
 const Navigation = ({setNewFilter, graph}) => {
   const {push} = useHistory();
@@ -8,7 +16,7 @@ const Navigation = ({setNewFilter, graph}) => {
   return (
     <div>
       <ButtonGroup setNewFilter={setNewFilter}></ButtonGroup>
-      <button onClick={ () => graph ? push("/") : push("/graph") }>Graph</button>
+      <GraphButton onClick={ () => graph ? push("/") : push("/graph") }></GraphButton>
     </div>
   );
 };
