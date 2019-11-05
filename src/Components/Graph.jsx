@@ -11,7 +11,7 @@ const Graph = ({toggleGraph}) => {
 
     return (
         <div>
-            <h1>Graph will be he soon ;-)</h1>
+            <h1>Graph will be here soon ;-)</h1>
             <Icon src='under-construction.svg' alt="Under construction"></Icon>
         </div>
     )
