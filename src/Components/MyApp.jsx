@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import TransactionList from "./TransactionList";
 import Pagination from "./Pagination";
 import NewTransactionButton from "./NewTransactionButton";
+import NewTransaction from "./NewTransaction";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Graph from "./Graph";
 
@@ -36,6 +37,7 @@ const MyApp = () => {
   // }
 
   const addTransaction = (transaction) => {
+    console.log('addTr', transaction)
     setTransactionData(
       [...transactionData, transaction]
     );
@@ -47,6 +49,8 @@ const MyApp = () => {
   } 
 
   const applyFilter = () => {
+    console.log('trData', transactionData);
+
     const actTransactions = transactionData.filter(
       transaction => transaction.direction === filter || "ALL" === filter
     );
@@ -89,7 +93,11 @@ const MyApp = () => {
           <Route path='/graph'
             render={() => <Graph toggleGraph={toggleGraph}></Graph> }
           ></Route>
-          
+
+          <Route path='/add'
+            render={() => <NewTransaction addTransaction={addTransaction}></NewTransaction> }
+          ></Route>
+
           <Route path='/' render={ () => 
               <TransactionList transactionData={transactionDataView} removeTransaction={removeTransaction} toggleGraph={toggleGraph} />}
           >

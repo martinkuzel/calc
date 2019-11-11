@@ -29,6 +29,8 @@ const AddButton = styled(DirButton)`
 
 const NewTransactionButton = ({addTransaction}) => {
   return <AddButton
+    // onClick={() => addTransaction(
+    //   {description: "Vecere v restauraci", amount: 666, currency: "CZK", direction: "OUT"}
     onClick={() => addTransaction(
       {description: "Vecere v restauraci", amount: 666, currency: "CZK", direction: "OUT"}
     )}>
