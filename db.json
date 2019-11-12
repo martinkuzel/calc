@@ -1,0 +1,7 @@
+{
+  "data" : [
+    { "description": "Vypalny", "amount": 5000, "currency": "CZK", "direction": "OUT" },
+    { "description": "Vyplata", "amount": 1000, "currency": "EUR", "direction": "IN" },
+    { "description": "Kniha javascript v praxi", "amount": 256, "currency": "CZK", "direction": "OUT" }
+  ]
+}

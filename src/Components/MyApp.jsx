@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Navigation from "./Navigation";
 import TransactionList from "./TransactionList";
-import Pagination from "./Pagination";
+import GetData from "./GetData";
 import NewTransactionButton from "./NewTransactionButton";
 import NewTransaction from "./NewTransaction";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
@@ -85,6 +85,7 @@ const MyApp = () => {
 
   return (
     <div>
+      <GetData></GetData>
 
       <BrowserRouter>
         <Navigation setNewFilter={setFilter} graph={graph}/>
