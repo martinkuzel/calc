@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { DirButton } from "./ButtonGroup";
+import { useHistory } from "react-router-dom";
 
 // QA: jak podedim z jine class ?
 // as="span" pri pouziti
@@ -28,12 +29,12 @@ const AddButton = styled(DirButton)`
 
 
 const NewTransactionButton = ({addTransaction}) => {
+  const {push} = useHistory();
+
   return <AddButton
     // onClick={() => addTransaction(
-    //   {description: "Vecere v restauraci", amount: 666, currency: "CZK", direction: "OUT"}
-    onClick={() => addTransaction(
-      {description: "Vecere v restauraci", amount: 666, currency: "CZK", direction: "OUT"}
-    )}>
+      // {description: "Vecere v restauraci", amount: 666, currency: "CZK", direction: "OUT"})}>
+    onClick={ () => push("/add") }>
     New Transaction
     </AddButton>;
 };

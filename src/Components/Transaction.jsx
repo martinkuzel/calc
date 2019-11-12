@@ -2,7 +2,7 @@ import React from "react";
 import Amount from "./Amount";
 import styled from "styled-components";
 
-const TransactionContainer = styled.div`
+export const TransactionContainer = styled.div`
   border: 4px solid black;
   background: silver;
   margin: 0.5rem auto;

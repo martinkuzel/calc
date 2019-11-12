@@ -103,10 +103,11 @@ const MyApp = () => {
           >
           </Route>
         </Switch>
+
+        {/* <Pagination /> */}
+        <NewTransactionButton addTransaction={addTransaction} />
       </BrowserRouter>
 
-      <Pagination />
-      <NewTransactionButton addTransaction={addTransaction} />
     </div>
   );
 }
