@@ -3,22 +3,25 @@ import {useHistory} from 'react-router-dom'
 import { TransactionContainer } from './Transaction'
 import styled from "styled-components"
 
+const FormElement = styled.span`
+    margin: 1rem;
+    input, select {
+        background-color: lightgray;
+    }
+`;
+
 const NewTransaction = ({addTransaction}) => {
-    const FormElement = styled.span`
-        /* margin: 1rem auto; */
-        /* input, select { */
-            /* background-color: lightgray; */
-        /* } */
-    `;
+
 
 
     const {push} = useHistory();
-    const [actTransaction, setActTransaction] = useState({ description: "test", amount: 0, currency: "CZK", direction: "OUT" });
+    const [actDesc, setActDesc] = useState("");
+    const [actAmount, setActAmount] = useState("");
+    const [actCurr, setActCurr] = useState("CZK");
 
     const addActual = () => {
-        actTransaction.amount > 0 ? actTransaction.direction = "IN" : actTransaction.direction = "OUT";
-        addTransaction(actTransaction);
-
+        const actDir = actAmount > 0 ? "IN" : "OUT";
+        addTransaction({ description: actDesc, amount: actAmount, currency: actCurr, direction: actDir });
         push("/");
     }
 
@@ -26,18 +29,18 @@ const NewTransaction = ({addTransaction}) => {
         <TransactionContainer>
             <FormElement>
                 Description: 
-                <input type="text" value={actTransaction.description} 
-                    onChange={(event) =>  setActTransaction({...actTransaction, description: event.target.value})} />
+                <input type="text" value={actDesc} 
+                    onChange={(event) => setActDesc(event.target.value)} />
             </FormElement>
             <FormElement>
                 Amount: 
-                <input type="number" value={actTransaction.amount} 
-                    onChange={(event) => setActTransaction({...actTransaction, amount: event.target.value})} />
+                <input type="number" value={actAmount} 
+                    onChange={(event) => setActAmount(event.target.value)} />
             </FormElement>
             <FormElement>
                 Currency:
-                <select value={actTransaction.currency} 
-                    onChange={(event) => setActTransaction({...actTransaction, currency: event.target.value})}>
+                <select value={actCurr} 
+                    onChange={(event) => setActCurr(event.target.value)}>
                         <option value='CZK'>CZK</option>
                         <option value='EUR'>EUR</option>
                         <option value='USD'>USD</option>
