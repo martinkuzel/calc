@@ -11,9 +11,6 @@ const FormElement = styled.span`
 `;
 
 const NewTransaction = ({addTransaction}) => {
-
-
-
     const {push} = useHistory();
     const [actDesc, setActDesc] = useState("");
     const [actAmount, setActAmount] = useState("");

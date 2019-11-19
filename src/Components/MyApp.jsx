@@ -20,22 +20,6 @@ const MyApp = () => {
   const [transactionDataView, setTransactionDataView] = useState(data);
   const [graph, setGraph] = useState(false);
 
-  // po add styled mam problem
-
-  // jak si predavat filter ?
-  // onClick reference funkce
-
-  // TOD list transakci, tlacitko na pridani (default tr.), neco na odebrani
-
-  // const setNewFilter = filter => {
-  //   setFilter(filter);
-  //   const actTransactions = transactionData.filter(
-  //     transaction => transaction.direction === filter || "ALL" === filter
-  //   );
-  
-  //   setTransactionData(actTransactions);
-  // }
-
   const addTransaction = (transaction) => {
     console.log('addTr', transaction)
     setTransactionData(
@@ -43,7 +27,6 @@ const MyApp = () => {
     );
   }
 
-  // QA: quals, hashcode, deep compare, json strigify
   const removeTransaction = (transaction) => {
     setTransactionData(transactionData.filter(tr => tr !== transaction));
   } 
@@ -65,23 +48,6 @@ const MyApp = () => {
   useEffect(() => {
     applyFilter();
   }, [transactionData, filter]) // QA: checkstyle ? useCallBack
-
-
-  // useEffect(applyFilter(), [transactionData, filter]);
-
-  // useEffect(() => {
-  //   // proc nemuzu volat metodu (applyfilter) v efektu ?
-  //   const actTransactions = transactionData.filter(
-  //     transaction => transaction.direction === filter || "ALL" === filter
-  //   );
-  
-    // setTransactionDataView(actTransactions);
-
-    // return () => {
-    //   this.applyFilter();
-    // };
-  // }, [transactionData, filter])
-
 
   return (
     <div>

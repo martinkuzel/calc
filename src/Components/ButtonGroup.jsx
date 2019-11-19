@@ -9,7 +9,7 @@ export const DirButton = styled.div`
   height: 3rem;
   /* background-color: silver; */
   background: linear-gradient(to top, silver, lightblue);
-  border: 5px solid black;
+  border: 3px solid black;
   margin: 0.2rem;
   font-variant-caps: all-petite-caps; 
   font-weight: bolder;
